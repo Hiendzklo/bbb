@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Object: đối tượng
+        I-Các khởi tạo đối tượng
+         1.let obj={
+            name:"hoa"
+         }
+         2.let newObj=new Object();
+         3.dùng hàm tạo constructor
+         4.dùng class
+         II-thuộc kiểu dữ liệu phức tạp(reference type)
+         -một object sẽ gồm các cặp key(thuộc tính-property) và value
+         -CRUD với object
+            1.C:reate
+            Cách thêm thuộc tính cho đối tượng:
+            đối tượng.tên thuộc tính="giá trị"
+            2.R:read
+            có thể dùng for-in
+            3.U:Update
+            4.D:Delete
+            III-Tham chiếu(gán địa chỉ ô nhớ)-tham trị(gán giá trị ô nhớ)
+            -tham chiếu: áp dụng cho dữ liệu phức tạp
+            -tham trị: áp dụng cho dữ liệu đơn giản
+    -->
+    <script>
+        let student={
+            name:"hoa",
+            key:123,
+        }
+        // student.address="HN";
+        // student.id="1";
+        // for (const key in student) {
+        //     console.log("key",student[key]);
+        // }
+        //student.name="hồng"
+        //delete students.address;
+        console.log("students",student);
+        //cách clone object
+        //Toán tử spread(shall colone)
+        //deep clone(JSON.parse(JSON.stringify()));(khi thay đổi ko liên quan đến nhau)
+            let obj1={
+                name:"hồng",
+                adddress:{
+                    city:"HN"
+                },
+            }
+            //let obj2={...obj1};
+            let obj2=JSON.parse(JSON.stringify(obj1));
+            //tạo ra 1 đia chỉ ô nhớ mới
+            obj1.name="minh thu";
+            obj1.adddress.city="HCM"
+            console.log(obj2.name);
+            console.log(obj2.adddress.city);
+    </script>
+</body>
+</html>

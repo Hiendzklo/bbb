@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dom{
+            color: red;
+        }
+        #image-container {
+            text-align: center;
+        }
+        /* Đặt kích thước cố định cho hình ảnh */
+        #image {
+            width: 700px; /* Đặt chiều rộng mong muốn */
+            height: px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="dom" >dom</h1>
+    <!--đổi nội dung dom thành học lập trình-->
+    <button onclick="changeContent()" >click</button>
+    <img src="" alt="">
+    <div id="image-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Hopetoun_falls.jpg" alt="Hình ảnh" id="image">
+    </div>
+    <p class="heading" id="dom">abc</p>
+    <p class="heading" id="dom">123</p>
+    <!--
+        DOM: document object model
+        mô hình tài liệu dạng đối tượng
+        Q/A:Dom sinh ra khi nào?
+        Khi trang web được tải thì trình duyệt (browser) sẽ tạo ra một mô hình cây DOM
+        Các thành phần trong DOM gồm 3 thành phần
+        1.element
+        Các cách để lấy element
+            1. Sử dụng phương thức document.getElementById()==>trả về element có id đó
+            2. Sử dụng phương thức document.getElementsByClassName()==>trả về html collection có class đó
+            3. Sử dụng phương thức document.getElementsByTagName()==>trả về html collection có thẻ đó
+            4. Sử dụng phương thức document.querySelector()==>trả về 1 element đầu tiên duy nhất
+            5. Sử dụng phương thức document.querySelectorAll()==>trả về 1 noteList
+        2.artribute: thuộc tính
+        -classList:truy cập lấy ra danh sách class của element
+        + cung cấp các phương thức 
+        -add():thêm class
+        -remove():xóa class
+        -contain():kiểm tra xem có tồn tại class hay không
+        -toggle(): như công tắc có class thì xóa đi mà không có class thì thêm vào
+        -setAttribute: thêm thuộc tính
+        3.text(nội dung)
+            1.innerHTML
+            2.textContent
+            3.innerText
+    -->
+    <script>
+    //     let elem=document.getElementById("dom");
+    //     let elemByClass=document.getElementsByClassName("heading");
+    //     let elembyTangName=document.getElementsByTagName("p");
+    //     let elembyselector=document.querySelector(".heading");
+    //     let elembyselectorAll=document.querySelectorAll(".heading");
+    //     console.log("elementBySelectorAll",elembyselectorAll);
+    //     let contentState = "dom"; // Biến để lưu trữ trạng thái hiện tại của nội dung
+    //     // function changeColor(){
+    //     //     let element=document.getElementById("dom");
+
+    //     //     // element.classList.toggle("dom");
+    //     //     elem.innerHTML="hoc lap trinh";
+            
+    //     // }
+    //     function changeContent() {
+    //     if (contentState === "dom") {
+    //         elem.innerHTML = "hoc lap trinh";
+    //         contentState = "hoc lap trinh"; // Thay đổi trạng thái
+    //     } else {
+    //         elem.innerHTML = "dom";
+    //         contentState = "dom"; // Thay đổi trạng thái
+    //     }
+    // }
+
+    let elem = document.getElementById("dom");
+        let contentState = "dom"; // Biến để lưu trữ trạng thái hiện tại của nội dung
+        let image = document.getElementById("image");
+        let images = ["https://upload.wikimedia.org/wikipedia/commons/3/36/Hopetoun_falls.jpg", "https://vuanem.com/blog/wp-content/uploads/2023/07/phan-loai-tai-nguyen-thien-nhien.jpg", "https://vietchem.com.vn/uploads/vietchem/2021/01/thien-nhien-la-gi-1.jpg"]; // Danh sách các đường dẫn đến các hình ảnh
+        let currentIndex = 0; // Chỉ số hiện tại của hình ảnh
+
+        // Hàm để thay đổi ảnh
+        function changeImage() {
+            image.src = images[currentIndex]; // Thay đổi đường dẫn hình ảnh
+            currentIndex = (currentIndex + 1) % images.length; // Chuyển sang hình ảnh tiếp theo
+        }
+
+        // Gọi hàm changeImage() sau mỗi 30 giây
+        setInterval(changeImage, 3000);
+
+        function changeContent() {
+            if (contentState === "dom") {
+                elem.innerHTML = "hoc lap trinh";
+                contentState = "hoc lap trinh"; // Thay đổi trạng thái
+            } else {
+                elem.innerHTML = "dom";
+                contentState = "dom"; // Thay đổi trạng thái
+            }
+        }
+
+    </script>
+</body>
+</html>

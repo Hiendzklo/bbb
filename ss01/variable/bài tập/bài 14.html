@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>In ma trận số</title>
+</head>
+<body>
+  <label for="inputNumber">Nhập vào một số nguyên dương n (n <= 100):</label>
+  <input type="number" id="inputNumber" min="1" max="100">
+  <button onclick="printMatrix()">In ma trận</button>
+
+  <script>
+    function printMatrix() {
+      const n = parseInt(document.getElementById('inputNumber').value);
+      const resultDiv = document.getElementById('result');
+
+      if (isNaN(n) || n <= 0 || n > 100) {
+        resultDiv.textContent = 'Vui lòng nhập số nguyên dương và nhỏ hơn hoặc bằng 100.';
+        return;
+      }
+
+      let matrix = '';
+      for (let i = 1; i <= n; i++) {
+        let row = '';
+        for (let j = i; j < i + n; j++) {
+          row += j + ' ';
+        }
+        matrix += row + '<br>';
+      }
+      resultDiv.innerHTML = matrix;
+    }
+  </script>
+
+  <div id="result"></div>
+</body>
+</html>
+

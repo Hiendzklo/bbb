@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đảo ngược câu</title>
+</head>
+<body>
+  <label for="sentence">Nhập vào một câu:</label>
+  <input type="text" id="sentence">
+  <button onclick="reverseSentence()">Đảo ngược</button>
+  
+  <script>
+    function reverseSentence() {
+      var sentence = document.getElementById('sentence').value;
+      var reversedSentence = sentence.split('').reverse().join('');
+      console.log('Câu đảo ngược của bạn là: ' + reversedSentence);
+    }
+  </script>
+</body>
+</html>

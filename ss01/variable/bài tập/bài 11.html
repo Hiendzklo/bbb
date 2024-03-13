@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Số lớn nhất và sắp xếp</title>
+</head>
+<body>
+  <label for="numbers">Nhập vào 5 số nguyên, cách nhau bằng dấu cách:</label>
+  <input type="text" id="numbers">
+  <button onclick="processNumbers()">Xử lý</button>
+
+  <script>
+    function processNumbers() {
+      const numbersInput = document.getElementById('numbers').value;
+      const numbers = numbersInput.split(' ').map(Number);
+      const maxNumber = Math.max(...numbers);
+      const sortedNumbers = numbers.sort((a, b) => b - a);
+      
+      console.log('Số nguyên lớn nhất là:', maxNumber);
+      console.log('Chuỗi số sắp xếp theo thứ tự giảm dần:', sortedNumbers.join(' '));
+    }
+  </script>
+</body>
+</html>

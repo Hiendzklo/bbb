@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopee-like Website</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #ee4d2d;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%; /* Đảm bảo header chiếm toàn bộ chiều rộng */
+          
+            
+        }
+    
+        .user-info {
+            text-align: right;
+        }
+        .user-info button {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        /* Main styles */
+        main {
+            padding: 20px;
+        }
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .product:hover{
+            background-color: #ec4545;
+            color: #fff;
+            transform: scale(1.02);
+        }
+        .product {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* Footer styles */
+        
+        button:hover {
+            opacity: 0.7; 
+        }
+        footer {
+            background-color: #e33f3f;
+            color: #fff;
+            padding: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .company-info p {
+            margin: 0 0 10px 0;
+        }
+        .link {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            margin-right: 10px;
+        }
+
+        /* CSS cho hiệu ứng hover */
+        .link:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+/* Add more styling as needed */
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div>
+            <img src="https://classic.vn/wp-content/uploads/2022/04/logo-shopee.png" style="width: 50px;" >
+            <h1>Shopee</h1>
+            <a>kênh người bán |</a>
+            <a>tải ứng dụng |</a>
+            <a>kết nối</a> <i class="fa-brands fa-facebook"></i>&nbsp;&nbsp;<i class="fa-brands fa-instagram"></i>
+        </div>
+
+        <div>
+            <input type="search" style="width: 800px;height: 40px;position: relative;"placeholder="Shopee bao ship 0Đ - Đăng kí ngay!">
+            <img src="./asset/images/tim kiem.png" style="width: 40px;position: absolute;right: 340px;">  
+        </div>
+        
+
+        <div class="user-info">
+            <a href="./pages/register.html" class="link">Đăng ký </a>
+            <a href="./pages/login.html" class="link">Đăng nhập</a><br><br>
+            <img src="https://bizweb.dktcdn.net/100/344/969/themes/705911/assets/carts.svg?1701401856386" style="width:50px"><br>
+            <img style="width:20px" src="https://cdn.pixabay.com/photo/2020/09/25/01/52/icon-5600276_1280.png">
+            <a>thông báo</a>
+            <img style="width:20px" src="https://cdn.pixabay.com/photo/2016/10/18/18/19/question-mark-1750942_640.png">
+            <a>hỗ trợ</a>
+            <img style="width:20px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5aIf4XDVVPqrAY2vjWV-z4uMTBAXYGwKAFvsabYlW5s6ses-VS4ipCBwX22Iy6Kyb_FQ&usqp=CAU">
+            <a>tiếng việt</a>
+        </div>
+        
+    </header>
+    <br><br><br><br><br><br><br>
+    <!-- Main -->
+    <main>
+        <h1>Danh sách sản phẩm</h1>
+        <div class="product-list">
+         
+            <div class="product">
+                <img src="./asset/images/ảnh 1.jpg" alt="Product Image">
+                <h2>Đèn Led</h2>
+                <p>Giá: 100.000 đ</p>
+                <button>Mua ngay</button>   
+            </div>
+            
+            <div class="product">
+                <img src="./asset/images/ảnh 2.jpg" alt="Product Image">
+                <h2>Sạc dự phòng</h2>
+                <p>Giá: 100.000 đ</p>
+                <button>Mua ngay</button>
+            </div>
+            <div class="product">
+                <img src="./asset/images/ảnh 3.jpg" alt="Product Image">
+                <h2>Tai nghe không dây</h2>
+                <p>Giá: 100.000 đ</p>
+                <button>Mua ngay</button>
+            </div>
+            <div class="product">
+                <img src="./asset/images/ảnh 4.webp" alt="Product Image">
+                <h2>Xịt thơm miệng</h2>
+                <p>Giá: 100.000 đ</p>
+                <button>Mua ngay</button>
+            </div>
+            
+        </div>
+        <br>
+        <div class="product-list">
+           
+            <div class="product">
+                <img src="./asset/images/ảnh 5.jpg" alt="Product Image">
+                <h2>Kính đọc sách</h2>
+                <p>Giá: 100.000 đ</p>
+                <button>Mua ngay</button>
+            </div>
+           
+            <div class="product">
+                <img src="./asset/images/ảnh 6.webp" alt="Product Image">
+                <h2>Khẩu trang 5D</h2>
+                <p>Giá: 100.000 đ</p>
+                <button>Mua ngay</button>
+            </div>
+            <div class="product">
+                <img src="./asset/images/ảnh 7.webp" alt="Product Image">
+                <h2>Kem chống nắng</h2>
+                <p>Giá: 100.000 đ</p>
+                <button>Mua ngay</button>
+            </div>
+            <div class="product">
+                <img src="./asset/images/ảnh 8.jpg" alt="Product Image">
+                <h2>Dép Lông </h2>
+                <p>Giá: 100.000 đ</p>
+                <button>Mua ngay</button>
+            </div>
+           
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <H2 style="color: black;">SHOPEE - GÌ CŨNG CÓ, MUA HẾT Ở SHOPEE</H2>
+        <p>Shopee - ứng dụng mua sắm trực tuyến thú vị, tin cậy, an toàn và miễn phí! Shopee là nền tảng giao dịch trực tuyến hàng đầu ở Đông Nam Á, có trụ sở chính ở Singapore, đã có mặt ở khắp các khu vực Singapore, Malaysia, Indonesia, Thái Lan, Philippines, Đài Loan, Brazil, México & Colombia. Với sự đảm bảo của Shopee, bạn sẽ mua hàng trực tuyến an tâm và nhanh chóng hơn bao giờ hết!</p>
+        <H4>MUA SẮM VÀ BÁN HÀNG ONLINE ĐƠN GIẢN, NHANH CHÓNG VÀ AN TOÀN</H4><br>
+        <h4 style="color: plum;">TOP THƯƠNG HIỆU NỔI BẬT</h4>
+        <p style="color:antiquewhite">Philips  |  Deerma  |  L'Oréal  | Kiehl's  |  Kappa  |  Juno  |  Converse  |  Biti's  |  Owen  |  Pedro  |  New Balance  |  adidas  |  Samsung  |  Sunhouse  |  Xiaomi  |  Oreo  |  Nike  |  Pantio  |  Supreme  |  PUMA  |  Kindle  |  DHC  |  Transino  |  Martiderm  |  Paula’s Choice  |  The Ordinary  |  KitKat  |  Teelab  |  SomeHow  |  Elise  |  YODY  |  Coolmate  |  MARC Fashion  |  Vergency |  Scott Platon  |  GUMAC  |  Vascara  |  MWC  |  Shondo  |  CANIFA  |  Sablanca  |  OLV Boutique  |  Pandora  |  Dottie  |  Skin Aqua | Electrolux | Hangy | Growplus | Obagi | Jbl | Cuckoo | Huggies | Medicube | Tsubaki | Mộc an | Sunhouse | Gaby</p>
+        <br><ul>
+            <h4 style="color: aquamarine;">Danh Mục</h4><br>
+            <p>THỜI TRANG NAM</p>
+            <p>Áo Khoác
+                | 
+               Áo Vest và Blazer
+                | 
+               Áo Hoodie, Áo Len & Áo Nỉ
+                | 
+               Quần Jeans
+                | 
+               Quần Dài/Quần Âu
+                | 
+               Quần Short
+                | 
+               Áo
+                | 
+               Áo Ba Lỗ
+                | 
+               Đồ Lót
+                | 
+               Đồ Ngủ
+                | 
+               Đồ Bộ
+                | 
+               Vớ/Tất
+                | 
+               Trang Phục Truyền Thống
+                | 
+               Đồ Hóa Trang
+                | 
+               Trang Phục Ngành Nghề
+                | 
+               Khác
+                | 
+               Trang Sức Nam
+                | 
+               Kính Mắt Nam
+                | 
+               Thắt Lưng Nam
+                | 
+               Cà vạt & Nơ cổ
+                | 
+               Phụ Kiện Nam</p>
+               <br>
+               <p>THỜI TRANG NỮ</p>
+               <P>Quần
+                | 
+               Quần đùi
+                | 
+               Chân váy
+                | 
+               Quần jeans
+                | 
+               Đầm/Váy
+                | 
+               Váy cưới
+                | 
+               Đồ liền thân
+                | 
+               Áo khoác, Áo choàng & Vest
+                | 
+               Áo len & Cardigan
+                | 
+               Hoodie và Áo nỉ
+                | 
+               Bộ
+                | 
+               Đồ lót
+                | 
+               Đồ ngủ
+                | 
+               Áo
+                | 
+               Đồ tập
+                | 
+               Đồ Bầu
+                | 
+               Đồ truyền thống
+                | 
+               Đồ hóa trang
+                | 
+               Vải
+                | 
+               Vớ/ Tất
+                | 
+               Khác</P>
+        </ul>
+        <br>
+        
+    </footer>
+    <footer>
+        <div class="footer-container">
+            <div class="links">
+                <a href="#privacy-policy">CHÍNH SÁCH BẢO MẬT </a><a>|</a>
+                <a href="#business-policy">QUY CHẾ HOẠT ĐỘNG </a><a>|</a>
+                <a href="#business-policy">CHÍNH SÁCH VẬN CHUYỂN </a><a>|</a>
+                <a href="#business-policy">CHÍNH SÁCH TRẢ HÀNG VÀ HOÀN TIỀN </a>
+                <!-- Add more links as needed -->
+            </div>
+            <div class="company-info">
+                <p>Địa chỉ: Tầng 4-5-6, Tòa nhà Capital Place, số 29 đường Liễu Giai, Phường Ngọc Khánh, Quận Ba Đình, Thành phố Hà Nội, Việt Nam.</p>
+                <p>Chịu Trách Nhiệm Quản Lý Nội Dung: Nguyễn Đức Trí - Điện thoại liên hệ: 024 73081221 (ext 4678)</p>
+                <p>Mã số doanh nghiệp: 0106773786 do Sở Kế hoạch & Đầu tư TP Hà Nội cấp lần đầu ngày 10/02/2015</p>
+                <p>© 2015 - Bản quyền thuộc về Công ty TNHH Shopee</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        let loggedInUser = localStorage.getItem('userData');
+
+        // Kiểm tra xem có thông tin người dùng đã đăng nhập hay không
+        if (loggedInUser) {
+            loggedInUser = JSON.parse(loggedInUser);
+            
+            // Hiển thị thông tin người dùng (email)
+            document.getElementById('email').innerText = loggedInUser.email;
+        } else {
+            // Nếu không có người dùng đã đăng nhập, có thể chuyển hướng người dùng đến trang đăng nhập
+            window.location.href = "../index.html";
+        }
+    </script>
+    
+    <script src="https://kit.fontawesome.com/4ce7f9b3cb.js" crossorigin="anonymous"></script>
+    
+</body>
+</html>

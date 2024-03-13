@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .main .header {
+            width: 500px;
+            height: 250px;
+        }
+
+        .main .header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .footer {
+            height: 100px;
+        }
+
+        .footer ul {
+            display: flex;
+            height: 50px;
+            width: 500px;
+            gap: 5px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .footer ul li {
+            width: 500px;
+            height: 50px;
+        }
+
+        .footer ul li img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .opacity{
+            opacity: 0.5;
+        }
+    </style>
+    <!--  -->
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="header">
+            <img id="main-image" src="./images/photo-1509042239860-f550ce710b93.avif" alt="">
+        </div>
+        <div class="footer">
+            <ul id="images">
+                PRE
+                <!-- <li>
+                    <img src="./images/photo-1482350325005-eda5e677279b.avif" alt="">
+                </li>
+                <li>
+                    <img src="./images/photo-1495474472287-4d71bcdd2085.avif" alt="">
+                </li>
+                <li>
+                    <img src="./images/photo-1501339847302-ac426a4a7cbb.avif" alt="">
+                </li>
+                <li>
+                    <img src="./images/photo-1509042239860-f550ce710b93.avif" alt="">
+                </li>
+                <li>
+                    <img src="./images/photo-1511920170033-f8396924c348.avif" alt="">
+                </li>
+                <li>
+                    <img src="./images/photo-1534040385115-33dcb3acba5b.avif" alt="">
+                </li>
+                <li>
+                    <img src="./images/photo-1542181961-9590d0c79dab.avif" alt="">
+                </li> -->
+                NEXT
+            </ul>
+        </div>
+    </div>
+    <script>
+        // tạo function render list ảnh
+        let images = ["./images/photo-1482350325005-eda5e677279b.avif", "./images/photo-1495474472287-4d71bcdd2085.avif",
+            "./images/photo-1501339847302-ac426a4a7cbb.avif", "./images/photo-1509042239860-f550ce710b93.avif",
+            "./images/photo-1511920170033-f8396924c348.avif", "./images/photo-1534040385115-33dcb3acba5b.avif",
+            "./images/photo-1542181961-9590d0c79dab.avif"];
+        function renderImage() {
+            let text = "";
+            for (let i = 0; i < images.length; i++) {
+                if(i==3){
+
+                    text +=
+                        `
+                        <li>
+                            <img  src="${images[i]}" alt="">
+                        </li>
+                    `
+                }else{
+                      text +=
+                        `
+                        <li>
+                            <img   class="opacity" src="${images[i]}" alt="">
+                        </li>
+                    `
+                }
+            }
+            let element = document.getElementById("images");
+            element.innerHTML =
+                `
+                <button>PRE</button> ${text}  <button onclick="nextImage()">NEXT</button>
+            `;
+        }
+        renderImage()
+        function nextImage() {
+            let result = images.pop();
+            images.unshift(result);
+            // gọi hàm render để cập nhật UI
+            document.getElementById("main-image").src = images[3];
+            renderImage();
+        }
+
+
+    </script>
+</body>
+
+</html>

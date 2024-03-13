@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        callback-function
+     -->
+    <script>
+        // console.log("111");
+        // setTimeout(()=>{
+        //     console.log("222");
+        // },0);
+        // console.log("333");
+        let sdt;
+        function xinSoDt(callback){
+            console.log("Nam goi cho Trang xin so quynh");
+            setTimeout(()=>{
+                console.log("trang mat 3s tim so");
+                sdt=2343242;
+                callback(sdt)
+            },3000)
+        }
+        function coSoMoiGoi(sdt){
+            console.log(`nam goi cho quynh theo so ${sdt}`);
+        }
+        xinSoDt(coSoMoiGoi);
+    </script>
+</body>
+</html>

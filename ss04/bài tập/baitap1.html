@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Học Viên</title>
+    <link rel="stylesheet" href="baitap1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h2>Thông tin học viên</h2>
+            <form id="studentForm">
+                <label for="name">Họ và tên:</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="phone">Số điện thoại:</label><br>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required><br>
+                <label for="address">Địa chỉ:</label><br>
+                <input type="text" id="address" name="address" required><br>
+                <label for="gender">Giới tính:</label><br>
+                <input type="radio" id="male" name="gender" value="male" checked>
+                <label for="male">Nam</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Nữ</label><br><br>
+                <button type="button" onclick="saveStudent()">Lưu</button>
+            </form>
+        </div>
+        <div class="right">
+            <h2>Danh sách học viên</h2>
+            <div class="search-container">
+                <input type="text" id="searchInput" onkeyup="search()" placeholder="Tìm kiếm tên học viên...">
+                <button class="button" onclick="sortByName()">Sắp xếp theo tên</button>
+            </div>
+            <table id="studentTable">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Họ và tên</th>
+                        <th>Email</th>
+                        <th>Số điện thoại</th>
+                        <th>Địa chỉ</th>
+                        <th>Giới tính</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="studentList">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="baitap1.js"></script>
+</body>
+</html>

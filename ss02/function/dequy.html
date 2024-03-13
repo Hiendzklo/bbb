@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        thế nào là đệ quy?
+        hàm tự gọi lại chính nó gọi là đệ quy
+        dùng đệ quy tính tổng từ 1 đến 10
+    -->
+<script>
+        function sumRecursive(n) {
+    if (n === 1) {
+        return 1; // Trường hợp cơ sở: tổng của một số nguyên dương là chính nó
+    } else {
+        return n + sumRecursive(n - 1); // Bước đệ quy: cộng n với tổng của các số nhỏ hơn n
+    }
+}
+
+// Tính tổng từ 1 đến 10
+let sum = sumRecursive(5);
+console.log("Tổng từ 1 đến 5 là:", sum);
+
+</script>
+</body>
+</html>

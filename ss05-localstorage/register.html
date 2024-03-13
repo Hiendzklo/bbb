@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Form</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 400px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    color: #666;
+  }
+
+  .form-group input {
+    width: 98%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .form-group input[type="checkbox"] {
+    display: inline-block;
+  }
+
+  .form-group button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #5f27cd;
+    color: white;
+    cursor: pointer;
+  }
+
+  .form-group button:hover {
+    background: #341f97;
+  }
+
+  .login-link {
+    display: block;
+    text-align: right;
+    margin-top: 20px;
+  }
+  .signup-link{
+    display: block;
+    text-align: right;
+    margin-top: 20px;
+  }
+
+  .login-link a {
+    color: #5f27cd;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px; /* Điều chỉnh khoảng cách giữa hai liên kết */
+  }
+
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+  .muted-text {
+  color: #666;
+  text-align: center;
+}
+#login{
+    display: flex;
+    justify-content: space-between;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <img style="margin-left: 170px;" src="https://scontent.xx.fbcdn.net/v/t1.15752-9/423735654_372213378926061_679237633893918885_n.png?stp=cp0_dst-png&_nc_cat=107&ccb=1-7&_nc_sid=510075&_nc_eui2=AeFiRoZPcN74ULdym3es_SuG3yu7KT7LAgPfK7spPssCA-3AH7-8sbCixu6rXcOR7GHQ0S0akRb9YPACek6smtlx&_nc_ohc=U9630bAfZF0AX9VePAX&_nc_oc=AQmEe2Gsop0PxDxJ-Jks-ghfRQw_t8O5175NuxfAsoujdDlf1jitpkU-1dWN4EhmEW5VE03N2zcgbvelfchWKwHU&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdRrwUrH3OEpjQDSZVtcKn0Z_ROVeCDe_Ib17LGtKhm1JA&oe=6608E563">
+    <h2>Sign In</h2>
+  <form id="signup-form">
+   
+    <div class="form-group">
+      
+      <input type="email" id="email" placeholder="Email Address *" required>
+    </div>
+    <div class="form-group">
+      
+      <input type="password" id="password" placeholder="Password *" required>
+    </div>
+    <input type="checkbox" id="marketing">Remember me
+    <div class="form-group"><br>
+      <button type="submit">SIGN IN</button>
+    </div>
+  </form>
+  <div id="login">
+    <a href="#" class="login-link">Forrgot password?</a>
+    <a href="#" class="signup-link">Don'n have an account?Sign Up</a>
+  </div>
+  <p class="muted-text">Copyright © Your Website 2024.</p>
+</div>
+
+<script>
+
+document.getElementById('signup-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  let marketingCheckbox = document.getElementById('marketing');
+  let isMarketingChecked = marketingCheckbox.checked;     
+  // Kiểm tra xem form có đầy đủ thông tin không
+  let isValid = true;
+  let email = document.getElementById('email').value;
+  let password = document.getElementById('password').value;
+  
+  if (  !email || !password|| !isMarketingChecked) {
+    isValid = false;
+    alert("Vui lòng nhập đầy đủ thông tin và đồng ý điều khoản.");
+    return; // Dừng lại nếu thiếu thông tin
+  }
+
+  // Nếu form hợp lệ, thực hiện đoạn mã tiếp theo
+  console.log('Form submitted!');
+  event.target.reset();
+
+  // Nếu form hợp lệ, chuyển hướng đến trang HTML đăng nhập và hiển thị thông báo
+  if (isValid) {
+    window.location.href = "register.html";
+    alert("Đăng nhập thành công!");
+  }
+});
+
+document.getElementById('signup-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  console.log('Form submitted!');
+  event.target.reset();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.signup-link').addEventListener('click', function(event) {
+        event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+        window.location.href = "login.html"; // Chuyển hướng đến trang HTML đăng nhập
+    });
+});
+</script>
+
+</body>
+</html>

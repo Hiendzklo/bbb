@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Array: Mảng thuộc kiểu dữ liệu phức tạp( tham chiếu-reference)
+        I.Cách khai báo
+        Q/A: có bao nhiêu cách khai báo (khởi tạo 1 mảng)
+        1,let arr=[];
+        2,let student =new Array();
+        Các phần tử trong mảng ngăn cách với nhau bằng dấu phẩy
+        mảng có thể chứa nhiều kiểu dữ liệu khác nhau
+        mảng đánh chỉ mục index từ 0
+        kiểm tra độ dài của mảng : tên mảng .length
+        các duyệt mảng
+        1.dùng for
+        2.for-in:trả về chỉ số của giá trị
+        3.for-of:trả về giá trị
+        *******
+        CRUD với mảng
+        1.C:create
+        +unshift:thêm vào đầu
+        +push:thêm vào cuối
+        +splish:thêm vào vị trí bất kì
+        2.R:read
+        -dùng for,for-in,for-of
+        3.U:update
+        -dùng splice
+        -update theo vị trí
+        4.D:Delete
+        -pop():xóa phần tử cuối cùng trong mỏng
+        -shift():xóa phần tử đầu
+        -dùng splice
+        *******
+        Các phương thức làm việc với mảng
+        1.push(): Thêm một phần tử vào cuối mảng.
+        2.pop(): Xóa phần tử cuối cùng của mảng.
+        3.shift(): Xóa phần tử đầu tiên của mảng.
+        4.unshift(): Thêm một phần tử vào đầu mảng.
+        5.splice(): Thêm hoặc xóa phần tử từ vị trí chỉ định trong mảng.
+        6.concat(): Nối hai mảng lại với nhau để tạo ra một mảng mới.
+        7.slice(): Tạo một bản sao của mảng hoặc chọn một phần của mảng.
+        8.indexOf(): Trả về chỉ số của phần tử đầu tiên trong mảng mà tìm thấy hoặc -1 nếu không tìm thấy.
+        9.lastIndexOf(): Tương tự như indexOf(), nhưng bắt đầu tìm kiếm từ cuối mảng.
+        10.forEach(): Lặp qua mỗi phần tử trong mảng và thực hiện một hàm cho mỗi phần tử.
+        11.map(): Tạo một mảng mới bằng cách gọi một hàm cho mỗi phần tử trong mảng.
+        12.filter(): Tạo một mảng mới chứa tất cả các phần tử thoả mãn một điều kiện được xác định.
+        13.reduce(): Thực thi một hàm cho mỗi phần tử trong mảng, tích luỹ kết quả vào một giá trị duy nhất.
+        14.find(): Trả về giá trị của phần tử đầu tiên trong mảng thoả mãn một hàm kiểm tra.
+        15.every() và some(): Kiểm tra xem tất cả hoặc một số phần tử trong mảng có thoả mãn điều kiện cho trước hay không.
+        16.findIndex(): Trả về chỉ số của phần tử đầu tiên trong mảng thoả mãn một hàm kiểm tra.
+        17.includes(): Kiểm tra xem một mảng có chứa một giá trị nhất định hay không, trả về true hoặc false.
+        18.reverse(): Đảo ngược thứ tự của các phần tử trong mảng.
+        19.sort(): Sắp xếp các phần tử của mảng theo thứ tự.
+        20.join(): Chuyển đổi một mảng thành một chuỗi bằng cách nối các phần tử với một dấu phân tách được chỉ định.
+        21.flat(): Tạo một mảng mới chứa tất cả các phần tử của mảng gốc được làm phẳng với một độ sâu được chỉ định.
+        22.flatMap(): Tương tự như flat(), nhưng trước khi làm phẳng, áp dụng một hàm cho mỗi phần tử của mảng.
+        23.fill(): Thay thế tất cả hoặc một phần của các phần tử trong mảng bằng một giá trị được chỉ định.
+        24.opyWithin(): Sao chép một phần của mảng vào cùng một mảng, không làm thay đổi độ dài của mảng, và trả về mảng đã thay đổi.
+        25.entries(): Trả về một đối tượng Iterator chứa cặp [index, value] cho mỗi phần tử trong mảng.
+        26.keys(): Trả về một đối tượng Iterator chứa chỉ số cho mỗi phần tử trong mảng.
+        27.values(): Trả về một đối tượng Iterator chứa giá trị của mỗi phần tử trong mảng.
+        28.from(): Tạo một mảng từ một đối tượng có tính iterable hoặc một dãy giá trị.
+        29.isArray(): Kiểm tra xem một biến có phải là một mảng hay không, trả về true hoặc false.
+        30.of(): Tạo một mảng từ một danh sách các đối số được truyền vào. 
+    -->
+
+    
+    <input type="text" id="productName" placeholder="mời nhập sản phẩm muốn mua">
+    <button onclick="addToCart()">Mua</button>
+
+    <script>
+        let products = [
+            {
+                id: 1,
+                name: "iphone5",
+                stock: 5,
+                price: 5000
+            },
+            {
+                id: 2,
+                name: "iphone6",
+                stock: 7,
+                price: 6000
+            },
+            {
+                id: 3,
+                name: "iphone8",
+                stock: 8,
+                price: 8000
+            }
+        ];
+        let cart = [];
+
+        function addToCart() {
+            let productName = document.getElementById('productName').value;
+            let product = products.find(item => item.name === productName);
+
+            if (product) {
+                if (product.stock > 0) {
+                    let existingItem = cart.find(item => item.name === productName);
+                    if (existingItem) {
+                        if (existingItem.quantity < product.stock) {
+                            existingItem.quantity += 1; // Tăng số lượng sản phẩm lên 1 nếu số lượng tồn kho vẫn còn đủ
+                            console.log('Sản phẩm', productName, 'đã được thêm vào giỏ hàng. Quantity:', existingItem.quantity);
+                        } else {
+                            console.log('Sản phẩm', productName, 'đã hết hàng.');
+                        }
+                    } else {
+                        let newItem = {
+                            id: product.id, // Sử dụng id của sản phẩm từ mảng products
+                            name: product.name,
+                            quantity: 1,
+                            price: product.price
+                        };
+                        cart.push(newItem); // Thêm sản phẩm mới vào giỏ hàng nếu chưa tồn tại
+                        console.log('Sản phẩm mới', productName, 'đã được thêm vào giỏ hàng:', newItem);
+                    }
+                } else {
+                    console.log('Sản phẩm', productName, 'đã hết hàng.');
+                }
+            } else {
+                console.log('Không có sản phẩm có tên "' + productName + '". Vui lòng nhập lại.');
+            }
+        }
+
+        // let students=["hoa","hồng","minh","hùng"];
+        // students.splice(2,0,"nhung");
+        // students.splice(4,0,"Huệ");
+        // students[1]="hạnh";
+        // for( let i=0;i<students.length;i++){
+        //     console.log(students[i]);
+        // }
+        // for (const key111 in students) {
+        //    console.log(students[key111]);
+        // }
+        // for (const value of students) {
+        //     console.log(value);
+        // }
+    </script>
+</body>
+</html>
